@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andrian Prayoga | QA Engineer &amp; Programmer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#00daf3",
+                        "tertiary": "#ffeac0",
+                        "surface-container-high": "#242b2d",
+                        "secondary-fixed": "#dae3f2",
+                        "primary-fixed": "#9cf0ff",
+                        "surface-container-low": "#151d1e",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#0d1516",
+                        "outline-variant": "#3b494c",
+                        "surface-variant": "#2e3638",
+                        "surface-container-highest": "#2e3638",
+                        "on-background": "#dce4e5",
+                        "surface": "#0d1516",
+                        "inverse-primary": "#006875",
+                        "on-surface": "#dce4e5",
+                        "secondary-container": "#3e4754",
+                        "background": "#0d1516",
+                        "on-primary-fixed": "#001f24",
+                        "on-error": "#690005",
+                        "on-primary": "#00363d",
+                        "primary": "#c3f5ff",
+                        "on-surface-variant": "#bac9cc",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "secondary": "#bec7d6",
+                        "qa-pass": "#25D366",
+                        "secondary-fixed-dim": "#bec7d6",
+                        "primary-fixed-dim": "#00daf3",
+                        "surface-glass": "rgba(25, 33, 44, 0.7)",
+                        "tertiary-fixed": "#ffdf96",
+                        "on-primary-fixed-variant": "#004f58",
+                        "on-secondary-container": "#adb6c4",
+                        "inverse-on-surface": "#2a3233",
+                        "on-tertiary-container": "#6f5500",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#00626e",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#131c27",
+                        "on-tertiary": "#3e2e00",
+                        "border-subtle": "rgba(255, 255, 255, 0.1)",
+                        "outline": "#849396",
+                        "qa-fail": "#FF4D4D",
+                        "surface-container-lowest": "#080f11",
+                        "tertiary-fixed-dim": "#f3bf26",
+                        "primary-container": "#00e5ff",
+                        "surface-container": "#192122",
+                        "inverse-surface": "#dce4e5",
+                        "on-secondary-fixed-variant": "#3e4754",
+                        "on-secondary": "#28313d",
+                        "on-tertiary-fixed": "#251a00",
+                        "surface-bright": "#333a3c",
+                        "tertiary-container": "#fec931"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-page": "clamp(1.5rem, 5vw, 4rem)",
+                        "stack-sm": "1rem",
+                        "gutter": "1.5rem",
+                        "stack-md": "2rem",
+                        "stack-lg": "4rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #0d1516; color: #dce4e5; overflow-x: hidden; }
+        .glass { background: rgba(25, 33, 44, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glow-hover:hover { box-shadow: 0 0 20px rgba(0, 229, 255, 0.2); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .step-active { color: #00e5ff; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d1516; }
+        ::-webkit-scrollbar-thumb { background: #3b494c; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-glass backdrop-blur-md border-b border-border-subtle">
+<div class="flex justify-between items-center px-margin-page py-4 max-w-[1280px] mx-auto">
+<a class="text-title-md font-title-md font-bold text-primary tracking-tighter" href="#">ANDRIAN PRAYOGA</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-lg text-body-lg" href="#home">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#skills">Skills</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#experience">Experience</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#portfolio">Portfolio</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold scale-95 active:scale-90 transition-transform hover:bg-primary-fixed duration-300">
+                Hire Me
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto px-margin-page w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 space-y-stack-sm">
+<span class="inline-block px-3 py-1 rounded-full border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest">Available for projects</span>
+<h1 class="font-display-lg text-display-lg max-md:font-headline-lg-mobile max-md:text-headline-lg-mobile text-on-surface leading-tight">
+                        Andrian Prayoga: <br/>
+<span class="text-primary-container">Ensuring Quality,</span><br/>
+                        Building Innovation
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Software Quality Assurance &amp; Programmer focused on precision and performance. Transforming complex requirements into flawless digital experiences.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold hover:scale-105 transition-transform" href="#portfolio">Explore Work</a>
+<a class="border border-primary text-primary px-8 py-3 rounded-lg font-bold hover:bg-primary/10 transition-all" href="#experience">My Journey</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative group">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
+<div class="relative rounded-2xl overflow-hidden glass border-primary/20 aspect-[4/5]">
+<img alt="Andrian Prayoga" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2hlAQ5I6KAmqGaY_x8XVv9FUlLWNABS7PudFYrpu-fJYox-PYqFN6ae2gwly48FVfArJSm1igNKoxEzAabTjKisiLamXeNEQYO6AkeSNPalu9y7Lnc6kKyLBTTPgBN-WvMRdrsQlnQRXQeTxtsVAPd7jW9l4bH1AN8X3ogJG-Rb2QcofNb6ndp5yno23avBp9mXywXBsUkSdxbGN4pAdMYPUNDSwt4c6eywg6nDfUerFkUQrcWY-q6md4AYJ-xIB2L-0"/>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-stack-lg bg-surface-dim" id="about">
+<div class="max-w-[1280px] mx-auto px-margin-page">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<div class="glass p-8 rounded-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">verified_user</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">PROFIL</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed text-justify">
+                                Saya adalah seorang Quality Assurance (QA) / Software Tester dengan latar belakang pendidikan Teknik Informatika dan pengalaman tiga tahun di bidang teknologi informasi. Selama berkarier, saya telah berkontribusi dalam berbagai proyek pengujian perangkat lunak, meliputi pengujian fungsional, analisis kebutuhan sistem, serta evaluasi kualitas aplikasi web, desktop dan mobile. Saya memiliki kemampuan dalam menyusun dan menjalankan skenario pengujian, mendokumentasikan hasil uji, serta menangani temuan defect dengan pendekatan yang terstruktur dan komunikatif. Terbiasa bekerja secara mandiri maupun dalam tim lintas fungsi, saya berkomitmen untuk memastikan setiap produk yang diuji mencapai standar kualitas yang optimal sebelum dirilis ke pengguna.
+                            </p>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="glass p-6 rounded-xl text-center">
+<div class="text-primary-container font-display-lg text-headline-lg">3+</div>
+<div class="text-label-sm font-label-sm uppercase tracking-widest opacity-60">Years Experience</div>
+</div>
+<div class="glass p-6 rounded-xl text-center">
+<div class="text-primary-container font-display-lg text-headline-lg">100%</div>
+<div class="text-label-sm font-label-sm uppercase tracking-widest opacity-60">QA Pass Rate</div>
+</div>
+</div>
+<div class="glass p-8 rounded-2xl">
+<h3 class="text-title-md font-title-md text-on-surface mb-4">Contact Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>andrian.prayoga0406@gmail.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>+6282-3335-05287</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Surabaya, Jawa Timur</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">school</span>
+<span>Sarjana Komputer (S.Kom)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-stack-lg relative overflow-hidden" id="skills">
+<div class="max-w-[1280px] mx-auto px-margin-page relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Technical <span class="text-primary-container">Competencies</span></h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mt-4">A comprehensive toolkit spanning across testing methodologies, automated frameworks, and modern development stacks.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testing Stack -->
+<div class="glass p-8 rounded-2xl glow-hover transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">fact_check</span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface mb-6">Testing</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Manual Testing</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">API Testing</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Postman</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Burp Suite</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Bug Report</span>
+</div>
+</div>
+<!-- Automation Stack -->
+<div class="glass p-8 rounded-2xl glow-hover transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">terminal</span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface mb-6">Automation</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Appium</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Test Project</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Automation Framework</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Mobile Testing</span>
+</div>
+</div>
+<!-- Tech Stack -->
+<div class="glass p-8 rounded-2xl glow-hover transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">code</span>
+</div>
+<h3 class="text-title-md font-title-md text-on-surface mb-6">Tech Stack</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Java</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">SQL</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">PHP / Laravel</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Flutter</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">Android Studio</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-label-sm font-label-sm border border-outline-variant">VS Code</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-stack-lg bg-surface-dim relative" id="experience">
+<div class="max-w-[1280px] mx-auto px-margin-page">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Professional <span class="text-primary-container">Timeline</span></h2>
+</div>
+<div class="relative space-y-stack-md">
+<!-- Timeline Line -->
+<div class="absolute left-0 md:left-1/2 top-0 h-full w-[2px] bg-outline-variant -translate-x-1/2 hidden md:block"></div>
+<!-- Experience 1 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 group">
+<div class="md:text-right">
+<div class="glass p-8 rounded-2xl border-l-4 border-primary hover:border-primary-container transition-all">
+<span class="font-label-sm text-label-sm text-primary-container tracking-widest uppercase">Juni 2022 - Sekarang</span>
+<h3 class="text-title-md font-title-md text-on-surface mt-2">Quality Assurance - Full time</h3>
+<p class="text-primary font-bold">PT Kasir Pintar Internasional</p>
+<ul class="mt-4 space-y-3 text-on-surface-variant text-sm list-none">
+<li class="flex items-start gap-2 md:flex-row-reverse md:text-right">
+<span class="material-symbols-outlined text-primary-container mt-1 text-sm">check_circle</span>
+<span>Menyusun skenario pengujian komprehensif, meningkatkan cakupan test hingga 30%.</span>
+</li>
+<li class="flex items-start gap-2 md:flex-row-reverse md:text-right">
+<span class="material-symbols-outlined text-primary-container mt-1 text-sm">check_circle</span>
+<span>Berhasil menemukan &amp; mencegah zero bug kritis sebelum rilis.</span>
+</li>
+<li class="flex items-start gap-2 md:flex-row-reverse md:text-right">
+<span class="material-symbols-outlined text-primary-container mt-1 text-sm">check_circle</span>
+<span>Mengelola dokumentasi test case terstruktur, mempercepat regression testing hingga 20%.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="hidden md:flex items-center justify-center relative">
+<div class="w-6 h-6 rounded-full bg-primary-container z-10 shadow-[0_0_15px_rgba(0,229,255,0.5)]"></div>
+</div>
+</div>
+<!-- Experience 2 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 group">
+<div class="hidden md:flex items-center justify-center relative order-1 md:order-2">
+<div class="w-6 h-6 rounded-full bg-outline-variant z-10 group-hover:bg-primary-container transition-colors"></div>
+</div>
+<div class="order-2 md:order-1">
+<div class="glass p-8 rounded-2xl border-l-4 border-outline-variant hover:border-primary-container transition-all">
+<span class="font-label-sm text-label-sm text-primary-container tracking-widest uppercase">Januari 2024 - Juni 2024</span>
+<h3 class="text-title-md font-title-md text-on-surface mt-2">Quality Assurance - Freelance</h3>
+<p class="text-primary font-bold">Akuntansiku</p>
+<ul class="mt-4 space-y-3 text-on-surface-variant text-sm list-none">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container mt-1 text-sm">check_circle</span>
+<span>Melakukan pengujian fungsional &amp; regresi, memvalidasi 10+ bug signifikan per sprint.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container mt-1 text-sm">check_circle</span>
+<span>Menganalisis &amp; membuat laporan bug komprehensif, mempercepat perbaikan bug.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container mt-1 text-sm">check_circle</span>
+<span>Melakukan penetration testing pada sistem Back End dengan Burp Suite.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-stack-lg" id="portfolio">
+  <div class="max-w-[1280px] mx-auto px-margin-page">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Featured <span class="text-primary-container">Projects</span></h2>
+        <p class="text-on-surface-variant mt-2">A showcase of my work in automation, web development, and quality engineering.</p>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      
+      <!-- Project 1: BotJurnal -->
+      <div class="glass rounded-2xl overflow-hidden group">
+        <div class="h-48 overflow-hidden relative">
+          <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDufanlSWqrcDzAbJGfvqkzXTZZXQG5_okDUfbPHG58TmuRD0DSy30YnuEl2qhm1Rbp7BCdOXHKrpWZi3NCF9w_w1VEYQL2x0dg7Cb7F8nDEjgBLeUakkKEYJI2aPOBbXVNK_h0aiwjpcHRDLUukucsApOaHQ3cnrnBAe5hT-svalatgp05uhuZaCmGIGQG4tAHt_5S2MT8kiw9KyIQeRS9ATyNa1wevDQlVCsbLw0c3F75-8L3qNsbxGd972yTiFyWpuJJsO672y4')"></div>
+          <div class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded uppercase">Project Pencatatan Keuangan</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-title-md font-title-md text-on-surface mb-2">BotJurnal</h3>
+          <p class="text-on-surface-variant text-sm mb-6">Platform otomatisasi pencatatan keuangan pribadi melalui chatbot whatsapp.</p>
+          <a href="https://botjurnal.online/" target="_blank" class="block text-center w-full py-2 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all">
+            Visit Site
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Latihan Otomasi Testing -->
+      <div class="glass rounded-2xl overflow-hidden group">
+        <div class="h-48 overflow-hidden relative">
+          <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" style="background-image: url('watermarked_img_14107346617593278545.png')"></div>
+          <div class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 rounded uppercase">QA Automation</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-title-md font-title-md text-on-surface mb-2">Automated Testing Maestro</h3>
+          <p class="text-on-surface-variant text-sm mb-6">Implementasi otomasi testing aplikasi yang menggunakan teknologi flutter dan platform ios.</p>
+          <button class="w-full py-2 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all cursor-not-allowed opacity-50">
+            Coming Soon
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="max-w-[1280px] mx-auto px-margin-page relative z-10">
+<div class="glass p-stack-md rounded-3xl text-center border-primary/30">
+<h2 class="font-display-lg text-headline-lg text-on-surface mb-6">Ready to Ensure Excellence?</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Let's discuss how my QA expertise and programming skills can elevate the reliability and performance of your software products.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-primary-container text-on-primary-container px-12 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3" href="mailto:andrian.prayoga0406@gmail.com">
+<span class="material-symbols-outlined">send</span>
+                            Start Conversation
+                        </a>
+<a class="glass border-outline px-12 py-4 rounded-xl font-bold hover:bg-surface-variant transition-colors flex items-center justify-center gap-3" 
+   href="https://drive.google.com/uc?export=download&id=1JBbdzA4jcbEoDZTNDAC3nlnv2P3lO2g2" 
+   target="_blank"
+   rel="noopener noreferrer">
+    <span class="material-symbols-outlined">description</span>
+    Download CV
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-border-subtle w-full py-stack-md">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center px-margin-page gap-gutter">
+<div class="flex flex-col gap-2">
+<span class="text-body-lg font-bold text-primary">ANDRIAN PRAYOGA</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 Andrian Prayoga.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/andrian-prayoga-043747221/">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100" href="https://github.com/alta-qe-Andrian-Prayoga">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-label-sm text-label-sm opacity-80 hover:opacity-100" href="mailto:andrian.prayoga0406@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth highlighting of active nav link based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.remove('text-on-surface-variant');
+                    link.classList.add('text-primary', 'border-b-2', 'border-primary', 'pb-1');
+                }
+            });
+        });
+
+        // Micro-interaction: Mouse tracking glow for cards
+        document.querySelectorAll('.glass').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
