@@ -363,11 +363,141 @@
         <div class="p-6">
           <h3 class="text-title-md font-title-md text-on-surface mb-2">BotJurnal</h3>
           <p class="text-on-surface-variant text-sm mb-6">Platform otomatisasi pencatatan keuangan pribadi melalui chatbot whatsapp.</p>
-          <a href="https://botjurnal.online/" target="_blank" class="block text-center w-full py-2 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all">
-            Visit Site
-          </a>
+          <button onclick="openProjectModal()" class="block text-center w-full py-2 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all">
+            Lihat Proyek
+        </button>
         </div>
       </div>
+
+      <!-- Project Modal -->
+<div id="projectModal"
+    class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-6">
+
+    <div class="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto relative">
+
+        <!-- Close -->
+        <button
+            onclick="closeProjectModal()"
+            class="absolute top-4 right-4 text-3xl hover:text-red-500">
+            &times;
+        </button>
+
+        <!-- Header -->
+        <div class="p-8 border-b">
+
+            <h2 class="text-3xl font-bold mb-3">
+                BotJurnal
+            </h2>
+
+            <div class="flex flex-wrap gap-2">
+
+                <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm">
+                    Node.js
+                </span>
+
+                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm">
+                    WhatsApp API
+                </span>
+
+                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-sm">
+                    Gemini AI
+                </span>
+
+                <span class="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm">
+                    OCR
+                </span>
+
+                <span class="px-3 py-1 rounded-full bg-red-100 text-red-700 text-sm">
+                    Express.js
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Content -->
+        <div class="p-8">
+
+            <!-- Screenshot -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+                <img
+                    src="images/SS2.jpeg"
+                    class="rounded-xl border shadow hover:scale-105 transition">
+
+                <img
+                    src="images/SS1.jpeg"
+                    class="rounded-xl border shadow hover:scale-105 transition">
+
+            </div>
+
+            <!-- Description -->
+
+            <h3 class="text-xl font-semibold mb-3">
+                Tentang Project
+            </h3>
+
+            <p class="text-gray-700 leading-8 mb-6">
+
+                <strong>BotJurnal</strong> merupakan asisten pencatatan
+                keuangan pribadi berbasis WhatsApp yang memanfaatkan
+                kecerdasan buatan <strong>Google Gemini AI</strong>
+                untuk mengekstrak data transaksi secara otomatis,
+                baik dari pesan teks maupun hasil pindaian foto
+                struk belanja.
+
+                Pengguna cukup mengirimkan pesan seperti
+                <em>"Bayar makan Rp25.000"</em> atau mengirim foto
+                struk, kemudian sistem akan mengenali nominal,
+                kategori, tanggal transaksi, serta menyimpannya ke
+                database secara otomatis.
+
+                Selain pencatatan transaksi, BotJurnal juga menyediakan
+                dashboard web untuk melihat laporan keuangan,
+                histori transaksi, grafik pengeluaran, serta ringkasan
+                kondisi keuangan pengguna.
+
+            </p>
+
+            <h3 class="text-xl font-semibold mb-3">
+                Fitur Utama
+            </h3>
+
+            <ul class="list-disc ml-6 space-y-2 text-gray-700">
+
+                <li>Pencatatan pemasukan dan pengeluaran melalui WhatsApp.</li>
+
+                <li>Ekstraksi transaksi otomatis menggunakan Google Gemini AI.</li>
+
+                <li>Scan foto struk belanja menggunakan AI.</li>
+
+                <li>Kategorisasi transaksi secara otomatis.</li>
+
+                <li>Dashboard web untuk laporan keuangan.</li>
+
+                <li>Grafik pengeluaran dan pemasukan.</li>
+
+                <li>Riwayat transaksi lengkap.</li>
+
+            </ul>
+
+            <div class="flex gap-4 mt-10">
+
+                <a href="https://botjurnal.online/"
+                    target="_blank"
+                    class="px-6 py-3 bg-primary text-white rounded-lg hover:opacity-90">
+
+                    Demo Website
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
       <!-- Project 2: Latihan Otomasi Testing -->
       <div class="glass rounded-2xl overflow-hidden group">
@@ -458,5 +588,28 @@
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
         });
+
+        function openProjectModal() {
+    const modal = document.getElementById("projectModal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById("projectModal");
+    modal.classList.remove("flex");
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+}
+
+// Tutup jika klik area gelap
+document.getElementById("projectModal").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closeProjectModal();
+    }
+
+});
     </script>
 </body></html>
